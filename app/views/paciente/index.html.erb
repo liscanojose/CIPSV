@@ -1,0 +1,104 @@
+<%= render "partials/head_dashboard" %>
+
+  <div class="col-lg-11">
+    <h1 class="page-header">
+      <%= @accionUsuario %> <small>Registrar <%= @accionUsuario%></small>
+    </h1>
+  </div>
+
+  <div class="space"></div>
+
+
+<div class="col-sm-offset-1 col-sm-10">
+  <h3><center>Datos personales</center></h3>
+
+     <%= form_for :paciente, :url=> { :action => :createPaciente } do |f| %>
+
+         <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Nombres</label>
+          <div class="col-sm-8">
+            <%= f.text_field :nombres ,class:"form-control input-md", required:"", placeholder:"nombres" %> 
+          </div>
+        </div>
+
+        <div class="row"></div>
+
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Apellidos</label>
+          <div class="col-sm-8">
+            <%= f.text_field :apellidos ,class:"form-control input-md", required:"", placeholder:"apellidos" %> 
+          </div>
+        </div>
+
+        <div class="row"></div>
+
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Cédula de Identidad</label>
+          <div class="col-sm-8">
+           <%= f.text_field :cedula ,class:"form-control input-md", required:"", placeholder:"cedula" %> 
+          </div>
+        </div>
+
+        <div class="row"></div>
+
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Fecha de nacimiento</label>
+          <div class="col-sm-8">
+            <%= f.date_field :fechaNacimiento ,class:"form-control input-md", required:"", placeholder:"ejemplo de fecha(04-07-1990)" %>
+          </div>
+        </div>
+
+        <div class="row"></div>
+
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Edad</label>
+          <div class="col-sm-2">
+          <%= f.number_field :edad, min: '1', max: '130',class:"form-control input-md", required:"" %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Sexo</label>
+          <div>
+          <div class="col-sm-1 select-sexo">
+            <%= f.select :sexo, options_for_select([["Masculino", "Masculino"], ["Femenino", "Femenino"]]) ,class:"form-control", name:"sexo"%>
+            </div>
+          </div>
+        </div>
+
+        <div class="row"></div>
+
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Dirección</label>
+          <div class="col-sm-8">
+            <%= f.text_field :direccion ,class:"form-control input-md", required:"", placeholder:"Ingrese su direccion" %>
+          </div>
+        </div>
+
+        <div class="row"></div>
+
+         <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Telefono</label>
+          <div class="col-sm-8">
+            <%= f.text_field :telefono ,class:"form-control input-md", required:"", placeholder:"Numero telefonico o celular" %> 
+          </div>
+        </div>
+
+        <div class="row"></div>
+        
+         <div class="form-group space-button">
+          <div class="col-sm-offset-3 col-md-5">
+           <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+          Guardar
+          <% end %>
+          <%= button_tag "Cancelar", type: :reset ,class:"btn btn-primary"%>
+           
+          </div>
+        </div>
+      <% end %>
+
+
+</div>
+
+
+<%= render "partials/bottom_dashboard" %>

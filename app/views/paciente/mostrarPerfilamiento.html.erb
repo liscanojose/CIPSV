@@ -1,0 +1,166 @@
+<%= render "partials/head_dashboard" %>
+
+<div class="col-lg-11 col-md-3">
+  <div class="col-lg-11">
+    <h1 class="page-header">
+      <%= @accionUsuario %> <small>Mostrar <%= @accionUsuario%></small>
+    </h1>
+  </div>
+
+  <div class="row  col-lg-10" style="text-align:right;">
+    <%= link_to 'Volver', url_for(:back) ,class:"btn btn-primary"%>
+  </div>
+
+ <div class="row col-sm-offset-2 col-md-5 col-lg-10" style="text-align:center;">
+    <table class="show">
+      <tr class="table-title">
+        <td>Cedula</td>
+        <td>Nombres</td>
+        <td>Apellidos</td>
+        <td>Teléfono</td>
+        <!--<td></td>-->
+      </tr>
+      <tr>
+        <td><%= @paciente.cedula %></td>
+        <td><%= @paciente.nombres %></td>
+        <td><%= @paciente.apellidos %></td>
+        <td><%= @paciente.telefono %></td>
+      </tr>
+    </table>
+  </div>
+
+  <!--     Tipos de Fustraciones       -->
+  <div class="row col-md-5 col-lg-10" style="text-align:center; margin:40px 0px -60px 0px; padding-left:100px;">
+    <center><h3>Tipos de Frustraciones</h3></center>
+  </div>
+
+ <div class="row col-sm-offset-1 col-md-5 col-lg-10" style="padding-left:60px;">
+    <table class="show">
+      <tr class="table-title">
+        <td>Impedimento</td>
+        <td>Conflicto</td>
+        <td>Demora</td>
+        <td>Fecha de Aplicacion</td>
+      </tr>
+      <tr>
+        <td><%= @tipoFrustracion1 %></td>
+        <td><%= @tipoFrustracion2 %></td>
+        <td><%= @tipoFrustracion3 %></td>
+        <td><%= @fechatipoFrustracion %></td>
+      </tr>
+    </table>
+    
+  </div>
+  <!--     Fin      -->
+
+
+
+<!--      Fustracion Por Impedimento       -->
+<% if @tipoFrustracion1 != "No Aplica"%>
+  <div class="row col-md-5 col-lg-10" style="text-align:center; margin:40px 0px -60px 0px; padding-left:100px;">
+    <center><h3>Frustracion Por Impedimento</h3></center>
+  </div>
+
+ <div class="row col-sm-offset-3 col-md-5 col-lg-10" style="padding-left:100px;">
+    <table class="show">
+      <tr> <td class="table-title">Agresividad</td> <td><%=   @impedimento1  %></td></tr>
+      <tr> <td class="table-title">Insensibilidad</td> <td><%= @impedimento2    %></td></tr>
+      <tr> <td class="table-title">Impulsividad</td> <td><%=  @impedimento3   %></td></tr>
+      <tr> <td class="table-title">Irritabilidad</td> <td><%= @impedimento4    %></td></tr>
+      <tr> <td class="table-title">Melancolia</td> <td><%= @impedimento5 %></td></tr>
+      <tr> <td class="table-title">Suceptibilidad</td> <td><%=  @impedimento6   %></td></tr>
+      <tr> <td class="table-title">Sexualidad</td> <td><%= @impedimento7    %></td></tr>
+      <tr> <td class="table-title">Introversion</td> <td><%=  @impedimento8   %></td></tr>
+    </table>
+    
+  </div>
+<%end%>
+  <!--     Fin      -->
+
+
+<!--      Fustracion Por Demora       -->
+<% if @tipoFrustracion3 != "No Aplica"%>
+  <div class="row col-md-5 col-lg-10" style="text-align:center; margin:40px 0px -60px 0px; padding-left:100px;">
+    <center><h3>Frustracion Por Demora</h3></center>
+  </div>
+
+ <div class="row col-sm-offset-3 col-md-5 col-lg-10" style="padding-left:100px;">
+    <table class="show">
+      <tr> <td class="table-title">Agresividad</td> <td><%=   @demora1  %></td></tr>
+      <tr> <td class="table-title">Insensibilidad</td> <td><%= @demora2    %></td></tr>
+      <tr> <td class="table-title">Impulsividad</td> <td><%=  @demora3   %></td></tr>
+      <tr> <td class="table-title">Irritabilidad</td> <td><%= @demora4    %></td></tr>
+      <tr> <td class="table-title">Melancolia</td> <td><%= @demora5 %></td></tr>
+      <tr> <td class="table-title">Suceptibilidad</td> <td><%=  @demora6   %></td></tr>
+      <tr> <td class="table-title">Sexualidad</td> <td><%= @demora7    %></td></tr>
+      <tr> <td class="table-title">Introversion</td> <td><%=  @demora8   %></td></tr>
+    </table>
+    
+  </div>
+  <%end%>
+  <!--     Fin      -->
+
+
+
+  <!--      Fustracion Por Conflicto       -->
+  <% if @tipoFrustracion2 != "No Aplica"%>
+  <div class="row col-md-5 col-lg-10" style="text-align:center; margin:40px 0px -60px 0px; padding-left:100px;">
+    <center><h3>Frustracion Por Conflicto</h3></center>
+  </div>
+
+ <div class="row col-sm-offset-3 col-md-5 col-lg-10" style="padding-left:100px;">
+    <table class="show">
+      <tr> <td class="table-title">Agresividad</td> <td><%=   @conflicto1  %></td></tr>
+      <tr> <td class="table-title">Insensibilidad</td> <td><%= @conflicto2    %></td></tr>
+      <tr> <td class="table-title">Impulsividad</td> <td><%=  @conflicto3   %></td></tr>
+      <tr> <td class="table-title">Irritabilidad</td> <td><%= @conflicto4    %></td></tr>
+      <tr> <td class="table-title">Melancolia</td> <td><%= @conflicto5 %></td></tr>
+      <tr> <td class="table-title">Suceptibilidad</td> <td><%=  @conflicto6   %></td></tr>
+      <tr> <td class="table-title">Sexualidad</td> <td><%= @conflicto7    %></td></tr>
+      <tr> <td class="table-title">Introversion</td> <td><%=  @conflicto8   %></td></tr>
+    </table>
+    
+  </div>
+  <%end%>
+  <!--     Fin      -->
+
+
+  <!--      Terapias       -->
+
+  <div class="row col-md-5 col-lg-10" style="text-align:center; margin:40px 0px -60px 0px; padding-left:100px;">
+    <center><h3>Terapias</h3></center>
+  </div>
+<% if @boolTerapias != false%>
+<div class="row col-sm-offset-1 col-md-5 col-lg-12" style="text-align:center;">
+  <table class="show">
+    <tr class="table-title" style="text-align:center;">
+      <td>Temperamento  </td>
+      <td> Terapia </th>
+    </tr>
+    <% @terapias.each  do |terapia| %>
+    <tr>
+      <td><%=  terapia.temperamento %> </td>
+      <td><center><%= terapia.terapia %></center> </td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+
+<%else%>
+
+  <div class="row col-md-5 col-lg-10" style="text-align:center; margin:40px 0px -60px 0px; padding-left:100px;">
+    <center><h5>No posee Terapias Asociadas</h4></center>
+  </div>
+
+<%end%>
+  <!--     Fin      -->
+
+
+
+  </div>
+
+
+<div class="row" style="margin-bottom: 200px;"></div>
+
+
+<%= render "partials/bottom_dashboard" %>

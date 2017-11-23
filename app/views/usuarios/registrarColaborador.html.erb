@@ -1,0 +1,104 @@
+<%= render "partials/head_dashboard" %>
+
+
+  <div class="col-lg-11">
+    <h1 class="page-header">
+      <%= @accionUsuario %> <small>Registrar <%= @accionUsuario%></small>
+    </h1>
+  </div>
+
+          <%= form_for :usuario, class:"form-registro", :url=> { :action => :create } do |f| %>
+
+          <% if @usuario.errors.any? %>
+            <div id="errorExplanation">
+              <h2><%= pluralize(@usuario.errors.count, "error") %> Un error evito que su registro fuera exitoso:</h2>
+              <ul>
+              <% @usuario.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+            <% end %>
+        
+          <!-- Text input-->
+          <div class="form-group" >
+            <label class="control-label col-md-4" for="usuario">Nombre</label>  
+            <div class="col-md-5">
+             <%= f.text_field :nombre ,class:"form-control input-md", required:"", placeholder:"nombre" %> 
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="usuario">Apellido</label>  
+            <div class="col-md-5">
+             <%= f.text_field :apellido ,class:"form-control input-md", required:"", placeholder:"apellido" %> 
+              
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="usuario">Correo</label>  
+            <div class="col-md-5">
+              <%= f.text_field :correo ,class:"form-control input-md", required:"", placeholder:"correo" %> 
+              
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="usuario">Telefono</label>  
+            <div class="col-md-5">
+             <%= f.text_field :telefono ,class:"form-control input-md", required:"", placeholder:"telefono" %> 
+              
+            </div>
+          </div>
+
+
+
+
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="usuario">Contraseña</label>  
+            <div class="col-md-5">
+            <%= f.password_field :password ,class:"form-control input-md", required:"", placeholder:"contraseña"%>
+              
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="usuario">Repita la Contraseña</label>  
+            <div class="col-md-5">
+            <%= f.password_field :password_confirmation ,class:"form-control input-md", required:"", placeholder:"repita la contraseña"%>
+              
+            </div>
+          </div>
+
+
+          <div class="form-group rol">
+            <label class="col-md-4 control-label" for="usuario">Rol</label>
+            <div class="col-md-5">
+             <%= f.text_field :rol,class:"form-control",:readonly => true ,placeholder: "Colaborador",:value => "4"%>
+            </div>
+          </div>
+
+          
+
+
+          <!--<div class="form-group">-->
+
+            <label class="col-md-4 control-label" for="registrar"></label>
+            <div class="col-md-4 reset">
+              <button id="registrar" name="registrar" class="btn btn-success">Registrar</button>
+              <%= button_tag "Cancelar", type: :reset ,class:"btn btn-primary boton"%>
+            </div>
+
+          <% end %>
+
+          <!--   Fin  Formulario     -->
+
+
+
+
+<%= render "partials/bottom_dashboard" %>

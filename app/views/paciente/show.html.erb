@@ -1,0 +1,86 @@
+<%= render "partials/head_dashboard" %>
+
+
+  <div class="col-lg-11">
+    <h1 class="page-header">
+      <%= @accionUsuario %> <small>Mostrar <%= @accionUsuario%></small>
+    </h1>
+  </div>
+
+  <div class="row  col-lg-10" style="text-align:right;">
+    <%= link_to 'Volver', '/mostrarPacientes' ,class:"btn btn-primary"%>
+  </div>
+
+  <div class="row col-sm-offset-2 col-md-5 col-lg-10" style="text-align:center;">
+    <table class="show">
+      <tr>
+        <td class="table-title">Cedula</td>
+        <td class="table-title">Nombres</td>
+        <td class="table-title">Apellidos</td>
+        <td class="table-title">Teléfono</td>
+        <!--<td></td>-->
+      </tr>
+      <tr>
+        <td><%= @paciente.cedula %></td>
+        <td><%= @paciente.nombres %></td>
+        <td><%= @paciente.apellidos %></td>
+        <td><%= @paciente.telefono %></td>
+        <!--<td><%= link_to 'Editar', edit_usuario_path(@paciente) %></td>-->
+      </tr>
+    </table>
+    
+  </div>
+
+
+
+  <div class="row col-sm-offset-1 col-md-5 col-lg-10" style="text-align:left; margin-top:40px; padding-left:60px;">
+    
+ <!--
+        <% if @edit==true %>
+            <td><%= link_to 'Editar', edit_paciente_path(paciente) %></td>
+        <% end %>
+        -->
+
+        <div class="row gcuestionarios">
+          <div class="row col-lg-9" style=" padding-left:80px;"><center><h3>Cuestionarios</h3></center></div>
+
+          <div class="row  col-lg-11"></div>
+
+          <div class="row  col-lg-4">
+            <%= link_to 'Tipo Frustraciones', class:"btn btn-primary" , controller: "paciente", action: "realizar_cuestionario", id: @paciente %>
+          </div>
+
+          <%if @bool1 != false %>
+            <div class="row  col-lg-3">
+              <%= link_to 'Impedimentos', controller: "paciente", action: "realizar_cuestionario_impedimento", id: @paciente %>
+            </div>
+          <%end%>
+
+          <%if @bool2 != false %>
+            <div class="row  col-lg-3">
+              <%= link_to 'Demoras', controller: "paciente", action: "realizar_cuestionario_demora", id: @paciente %>
+            </div>
+          <%end%>
+          <%if @bool3 != false %>
+            <div class="row  col-lg-3">
+              <%= link_to 'Conflictos', controller: "paciente", action: "realizar_cuestionario_conflicto", id: @paciente %>
+            </div>
+          <%end%>
+
+
+        </div>
+
+
+        <div class="row gcuestionarios">
+          <div class="row  col-lg-9"><center><h3>Perfilamiento</h3></center></div>
+
+          <div class="row  col-lg-11"></div>
+            <div class="row  col-lg-10" style="text-align:center; padding:10px;">
+              <%= link_to 'Mostrar Perfilamiento', controller: "paciente", action: "mostrarPerfilamiento", id: @paciente %>
+            </div>
+          </div>
+  </div>
+
+
+
+<%= render "partials/bottom_dashboard" %>

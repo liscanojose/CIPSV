@@ -1,0 +1,20 @@
+
+<!--<%= link_to 'Inicio','/inicio'%> eliminar era solo para ver la otra forma de colocar el link-->
+
+<%= link_to 'Inicio', cuestionario_tipo_frustracion_index_url %>
+| <%= link_to 'Editar', edit_cuestionario_tipo_frustracion_path(@cuestionario_tipo_frustracion) %>
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th></th>
+    <th>Correo</th>
+    <th colspan="2"></th>
+    
+  </tr>
+  <tr>
+  <!--Cambiar por pacientes peroluego -->
+  <td><%= @usuario.nombre %></td>
+   <td>|</td>
+  <td><%= @usuario.correo %></td>
+  </tr>
+ </table>

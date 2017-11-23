@@ -1,0 +1,267 @@
+<!--http://edgeguides.rubyonrails.org/getting_started.html-->
+<body>
+      <!--sidebar start-->
+       <%= render "partials/menu_"+@rol2 %>
+      <!--sidebar end-->
+
+
+
+
+
+
+
+   <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+<h1><center>Actualizar <%= @rol4%></center></h1>
+ 
+<%= form_for :cuestionario_tipo_frustracion, url: cuestionario_tipo_frustracion_path(@cuestionario_tipo_frustracion), method: :patch do |f| %>
+  
+ 
+    <div class='panel panel-primary dialog-panel'>
+      
+      <div class='panel-body'>
+      <h3><center>Cuestionario A</center></h3>
+
+<div class="container">
+
+
+  
+
+
+
+
+ <div class="form-group">
+  <label class="col-md-10 control-label" for="usuario">Cedula del paciente</label>
+  <div class="col-md-4">
+
+    <%= f.text_field :cedula  ,class:"form-control",:readonly => true ,placeholder: "cedula"%>
+    
+ </div>
+</div>
+
+
+
+
+      
+
+
+
+  <div class="form-group">
+  <label class="col-md-10 control-label" for="usuario">1 ¿En una escala del 1 al 10 si no logras lo que quieres por culpa de terceros cuanto te molestas?</label>
+  <div class="col-md-4">
+    <%= f.number_field :resp_A1, max: 10, min: 1 ,class:"form-control" %>
+  </div>
+</div>
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-10 control-label" for="usuario">2 Cuando te rechazan de manera afectiva ¿Buscas más a la persona?</label>  
+  <div class="col-md-4">
+
+   <%= f.label :SI %><%= f.radio_button :resp_A2 ,'SI'%>
+   <%= f.label :NO %><%= f.radio_button :resp_A2 ,'NO'%>
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-10 control-label" for="usuario">3 ¿Sientes ansiedad cuando no controlas un hecho? </label>  
+  <div class="col-md-4">
+   <%= f.label :SI %><%= f.radio_button :resp_A3 ,'SI'%>
+   <%= f.label :NO %><%= f.radio_button :resp_A3 ,'NO'%>
+    
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-10 control-label" for="usuario">4 ¿Tiendes a pensar frecuentemente en tu futuro?</label>  
+  <div class="col-md-4">
+    <%= f.label :SI %><%= f.radio_button :resp_A4 ,'SI'%>
+   <%= f.label :NO %><%= f.radio_button :resp_A4,'NO'%>
+    
+  </div>
+</div>
+
+
+
+
+
+<div class="form-group">
+  <label class="col-md-10 control-label" for="usuario">5 ¿Sientes impotencia cuando no puedes lograr nada?</label>  
+  <div class="col-md-4">
+   <%= f.label :SI %><%= f.radio_button :resp_A5 ,'SI'%>
+   <%= f.label :NO %><%= f.radio_button :resp_A5 ,'NO'%>
+    
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-10 control-label" for="usuario">6 Si tienes una discusión y la persona contradice tu punto de vista, ¿Cómo reaccionas? (Opciones a: Me retiro de la discusión, b: Debato su punto de vista, c: Golpeo las paredes, d: Insulto, e:LLoro, f: Todas, g: Ninguna) </label>  
+  <div class="col-md-4">
+    <%= f.text_field :resp_A6,class:"form-control"%>
+    
+  </div>
+</div>
+
+
+
+</br>
+</br>
+</br>
+
+
+
+  
+
+</div>
+<!--iba un end-->
+</div>
+</div>
+
+
+
+
+    <div class='panel panel-primary dialog-panel'>
+      
+      <div class='panel-body'>
+      <h3><center>Cuestionario B</center></h3>
+
+<div class="container">
+
+
+
+
+
+  <div class="form-group">
+  <label class="col-md-10 control-label" for="usuario">1 ¿Te sientes incomodo cuando ves o escuchas a unas personas discutir?</label>
+  <div class="col-md-4">
+    <%= f.label :SI %><%= f.radio_button :resp_B1 ,'SI'%>
+   <%= f.label :NO %><%= f.radio_button :resp_B1 ,'NO'%>
+  </div>
+</div>
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-10 control-label" for="usuario">2 ¿Después de una discusión te imaginas lo que pudiste haber dicho?</label>  
+  <div class="col-md-4">
+
+   <%= f.label :SI %><%= f.radio_button :resp_B2 ,'SI'%>
+   <%= f.label :NO %><%= f.radio_button :resp_B2 ,'NO'%>
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-10 control-label" for="usuario">3 ¿luego de discutir te sientes incomodo durante el día?</label>  
+  <div class="col-md-4">
+   <%= f.label :SI %><%= f.radio_button :resp_B3 ,'SI'%>
+   <%= f.label :NO %><%= f.radio_button :resp_B3 ,'NO'%>
+    
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-10 control-label" for="usuario">4 ¿conversas con los demás antes de manifestar una incomodidad?</label>  
+  <div class="col-md-4">
+    <%= f.label :SI %><%= f.radio_button :resp_B4 ,'SI'%>
+   <%= f.label :NO %><%= f.radio_button :resp_B4,'NO'%>
+    
+  </div>
+</div>
+
+
+
+
+
+
+
+</br>
+</br>
+</br>
+
+
+
+  
+
+</div>
+<!--iba un end-->
+</div>
+</div>
+
+
+
+
+    <div class='panel panel-primary dialog-panel'>
+      
+      <div class='panel-body'>
+      <h3><center>Cuestionario C</center></h3>
+
+<div class="container">
+
+
+<!-- Text input-->
+
+  
+
+
+  <div class="form-group">
+  <label class="col-md-10 control-label" for="usuario">1 ¿En una escala del 1 al 10 cuanto te molesta o te irrita esperar?</label>
+  <div class="col-md-4">
+    <%= f.number_field  :resp_C1 , max: 10, min: 1 ,class:"form-control" %>
+  </div>
+</div>
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-10 control-label" for="usuario">2 ¿En una escala del 1 al 10 cuanta ansiedad te genera hacer esperar?</label>  
+  <div class="col-md-4">
+
+   <%= f.number_field  :resp_C2 , max: 10, min: 1 ,class:"form-control" %>
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-10 control-label" for="usuario">3 ¿si no obtienes una recompensa inmediata de algún esfuerzo realizado te desmotivas?</label>  
+  <div class="col-md-4">
+   <%= f.label :SI %><%= f.radio_button :resp_C3 ,'SI'%>
+   <%= f.label :NO %><%= f.radio_button :resp_C3 ,'NO'%>
+    
+  </div>
+</div>
+
+
+
+
+
+</br>
+</br>
+</br>
+
+
+
+  <div class="form-group">
+          <div class="col-sm-offset-5 col-md-5">
+           <%= f.submit "Guardar" ,class:"btn btn-primary"%>
+           <%= button_tag "Cancelar", type: :reset ,class:"btn btn-primary"%>
+           <%= link_to 'Volver', url_for(:back) ,class:"btn btn-primary"%>
+           
+          </div>
+        </div>
+
+
+</div>
+</div>
+</div>
+<% end %>
+ 
+</section>
+</section>
+

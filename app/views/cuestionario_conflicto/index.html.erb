@@ -1,0 +1,775 @@
+<body>
+      <!--sidebar start-->
+      <%= render "partials/menu_"+@rol2 %>
+      <!--sidebar end-->
+
+
+
+   <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+
+<%= form_for :cuestionario_conflicto, :url => {:controller => 'cuestionario_conflicto', :action => :create} do |f| %>
+    <div class='panel panel-primary dialog-panel'>
+      <div class='panel-body'>
+        <h3>
+          <center>Cuestionario A. AGRESIVIDAD</center>
+        </h3>
+
+        <div class="form-group">
+          <label class="col-md-10 control-label" for="usuario">Cedula del paciente</label>
+          <div class="col-md-4">
+
+            <%= f.text_field :paciente_id, class: "form-control", :readonly => true, placeholder: @paciente.id, :value => @paciente.id %>
+           
+
+          </div>
+        </div>
+
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-10 control-label" for="usuario">1) ¿Adoptas una postura y gestos rígidos?</label>
+          <div class="col-md-4">
+
+            <%= f.label :SI %><%= f.radio_button :resp_Q1, 'SI' %>
+            <%= f.label :NO %><%= f.radio_button :resp_Q1, 'NO' %>
+
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-10 control-label" for="usuario">2) ¿Actúas en forma destructiva hacia sí mismo y/o hacia
+            el medio ambiente? </label>
+          <div class="col-md-4">
+            <%= f.label :SI %><%= f.radio_button :resp_Q2, 'SI' %>
+            <%= f.label :NO %><%= f.radio_button :resp_Q2, 'NO' %>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-10 control-label" for="usuario">3) ¿Te aíslas negativamente?</label>
+          <div class="col-md-4">
+            <%= f.label :SI %><%= f.radio_button :resp_Q3, 'SI' %>
+            <%= f.label :NO %><%= f.radio_button :resp_Q3, 'NO' %>
+
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label class="col-md-10 control-label" for="usuario">4) ¿Actúas de forma hostil?</label>
+          <div class="col-md-4">
+            <%= f.label :SI %><%= f.radio_button :resp_Q4, 'SI' %>
+            <%= f.label :NO %><%= f.radio_button :resp_Q4, 'NO' %>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-10 control-label" for="usuario">5) ¿Reaccionas en forma violenta e impulsiva ante los señalamientos?.</label>
+          <div class="col-md-4">
+            <%= f.label :SI %><%= f.radio_button :resp_Q5, 'SI' %>
+            <%= f.label :NO %><%= f.radio_button :resp_Q5, 'NO' %>
+
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label class="col-md-10 control-label" for="usuario">6) ¿Utilizas términos ofensivos, despectivos e
+            inadecuados en el trato con los demás?.</label>
+          <div class="col-md-4">
+            <%= f.label :SI %><%= f.radio_button :resp_Q6, 'SI' %>
+            <%= f.label :NO %><%= f.radio_button :resp_Q6, 'NO' %>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-10 control-label" for="usuario">7) ¿Hallas agrado en criticar a los demás?
+            cuando se realizan actividades en grupo?</label>
+          <div class="col-md-4">
+            <%= f.label :SI %><%= f.radio_button :resp_Q7, 'SI' %>
+            <%= f.label :NO %><%= f.radio_button :resp_Q7, 'NO' %>
+
+          </div>
+        </div>
+        </br>
+        </br>
+        </br>
+      </div>
+
+    </div>
+    </div>
+
+
+    <div class='panel panel-primary dialog-panel'>
+
+      <div class='panel-body'>
+        <h3>
+          <center>Cuestionario B. INSENSIBILIDAD</center>
+        </h3>
+
+        <div class="container">
+
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">1) ¿Te interesa lo que le pasa a los demás?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_R1, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_R1, 'NO' %>
+            </div>
+          </div>
+
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">2) ¿Te muestras indiferente, poco afectivo, frio hacia
+              los demás?</label>
+            <div class="col-md-4">
+
+              <%= f.label :SI %><%= f.radio_button :resp_R2, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_R2, 'NO' %>
+
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">3) ¿Tienes consideración hacia los demás?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_R3, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_R3, 'NO' %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">4) ¿Te muestras insensible al dolor ajeno? </label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_R4, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_R4, 'NO' %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">5) ¿Te interesa el sufrimiento de los demás?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_R5, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_R5, 'NO' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">6) ¿Te interesa lo que ocurre en tu familia?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_R6, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_R6, 'NO' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">7) ¿Actúas de manera egocéntrica?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_R7, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_R7, 'NO' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">8) ¿Pierdes el control con facilidad?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_R8, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_R8, 'NO' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">9) ¿Se te dificultan las relaciones interpersonales</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_R9, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_R9, 'NO' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">10) ¿Reaccionas emocionalmente ante los estímulos
+              ambientales?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_R10, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_R10, 'NO' %>
+            </div>
+          </div>
+
+
+          </br>
+          </br>
+          </br>
+
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <div Klass='panel panel-primary dialog-panel'>
+
+      <div class='panel-body'>
+        <h3>
+          <center>Cuestionario C. IMPULSIVIDAD</center>
+        </h3>
+
+        <div class="container">
+
+
+          <!-- Text input-->
+
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">1) ¿Analizas la situación antes de actuar?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_S1, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_S1, 'NO' %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">2) ¿Tienes poco control de tus impulsos??</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_S2, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_S2, 'NO' %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">3) ¿Meditas las consecuencias de tus actos?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_S3, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_S3, 'NO' %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">4) ¿Actúas a la ligera? </label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_S4, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_S4, 'NO' %>
+
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">5) ¿Actúas inconscientemente?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_S5, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_S5, 'NO' %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">6) ¿Actúas dominado por tus emociones?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_S6, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_S6, 'NO' %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">7) ¿Hablas sin reflexión ni cautelao?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_S7, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_S7, 'NO' %>
+
+            </div>
+          </div>
+
+
+          </br>
+          </br>
+          </br>
+
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class='panel panel-primary dialog-panel'>
+
+      <div class='panel-body'>
+        <h3>
+          <center>Cuestionario D. IRRITABILIDAD</center>
+        </h3>
+
+        <div class="container">
+
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">1) ¿Te molestas e irritas por pequeñas cosas?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_T1, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_T1, 'NO' %>
+            </div>
+          </div>
+
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">2) ¿Eres inmaduro emocionalmente (malcriado,
+              explosivo)?</label>
+            <div class="col-md-4">
+
+              <%= f.label :SI %><%= f.radio_button :resp_T2, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_T2, 'NO' %>
+
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">3) ¿Sientes frustración con facilidad?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_T3, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_T3, 'NO' %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">4) ¿Estás de mal humor todo el tiempo? </label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_T4, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_T4, 'NO' %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">5) ¿Aceptas críticas y señalamientos?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_T5, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_T5, 'NO' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">6) ¿Siempre estas a la defensiva?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_T6, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_T6, 'NO' %>
+            </div>
+          </div>
+
+
+          </br>
+          </br>
+          </br>
+
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class='panel panel-primary dialog-panel'>
+
+      <div class='panel-body'>
+        <h3>
+          <center>Cuestionario E. MELANCOLÍA</center>
+        </h3>
+
+        <div class="container">
+
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">1) ¿Sientes compasión por ti mismo? </label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_U1, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_U1, 'NO' %>
+            </div>
+          </div>
+
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">2) ¿Te deprimes con facilidad?</label>
+            <div class="col-md-4">
+
+              <%= f.label :SI %><%= f.radio_button :resp_U2, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_U2, 'NO' %>
+
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">3) ¿Tienes poco entusiasmo?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_U3, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_U3, 'NO' %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">4) ¿Tienes a estar solo?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_U4, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_U4, 'NO' %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">5) ¿Tienes baja autoestima?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_U5, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_U5, 'NO' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">6) ¿Te creas limitaciones? </label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_U6, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_U6, 'NO' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">7) ¿Careces de metas? </label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_U7, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_U7, 'NO' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">8) ¿Tienes poca motivación al logro?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_U8, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_U8, 'NO' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">9) ¿Tiendes a pensar en el suicidio como alternativa
+              para no enfrentar la situación personal?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_U9, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_U9, 'NO' %>
+            </div>
+          </div>
+
+
+
+          </br>
+          </br>
+          </br>
+
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class='panel panel-primary dialog-panel'>
+
+      <div class='panel-body'>
+        <h3>
+          <center>Cuestionario F. SUSCEPTIBILIDAD</center>
+        </h3>
+
+        <div class="container">
+
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">1) ¿Lloras y te alteras con facilidad por las cosas que te dicen? </label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_V1, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_V1, 'NO' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">2) ¿Tomas las cosas a nivel personal?</label>
+            <div class="col-md-4">
+
+              <%= f.label :SI %><%= f.radio_button :resp_V2, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_V2, 'NO' %>
+
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">3) ¿Te involucras sentimentalmente de manera
+              exagerada en las problemáticas de los demás?</label>
+            <div class="col-md-4">
+
+              <%= f.label :SI %><%= f.radio_button :resp_V3, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_V3, 'NO' %>
+
+            </div>
+          </div>
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">4) ¿Te afectan mucho las críticas?  </label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_V4, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_V4, 'NO' %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">5) ¿Tenes baja autoestima?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_V5, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_V5, 'NO' %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">6) ¿Tienes poca confianza en ti mismo?  </label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_V6, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_V6, 'NO' %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">7) ¿Te deprimes fácilmente?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_V7, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_V7, 'NO' %>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">8) ¿Muestras subjetividad al evaluar la realidad, al hacer juicios y al tomar decisiones?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_V8, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_V8, 'NO' %>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">9) ¿Te ofendes fácilmente?  </label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_V9, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_V9, 'NO' %>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">10) ¿Tienes control de tus sentimientos? </label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_V10, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_V10, 'NO' %>
+            </div>
+          </div>
+
+
+          </br>
+          </br>
+          </br>
+
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class='panel panel-primary dialog-panel'>
+
+      <div class='panel-body'>
+        <h3>
+          <center>Cuestionario G. SEXUALIDAD</center>
+        </h3>
+
+        <div class="container">
+
+
+          <!-- Text input-->
+
+
+          <!-- Text input-->
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">1) ¿Relacionas con el área sexual todo lo que se
+              hace o dice?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_W1, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_W1, 'NO' %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">2) ¿Te masturbas compulsivamente?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_W2, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_W2, 'NO' %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">3) ¿Presentas desviaciones en la conducta
+              sexual(zoofilia, fetichismo o pedofilia)?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_W3, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_W3, 'NO' %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">4) Tienes estabilidad en la relación de
+              pareja?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_W4, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_W4, 'NO' %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">5) ¿Tratas a la persona de sexo opuesto como un
+              objeto sexual? </label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_W5, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_W5, 'NO' %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">6) ¿Alardeas continuamente de tu condición de hombre
+              o mujer?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_W6, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_W6, 'NO' %>
+
+            </div>
+          </div>
+
+
+          </br>
+          </br>
+          </br>
+
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class='panel panel-primary dialog-panel'>
+
+      <div class='panel-body'>
+        <h3>
+          <center>Cuestionario H. INTROVERSION</center>
+        </h3>
+
+        <div class="container">
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">1) ¿Tiendes a aislarte??</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_X1, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_X1, 'NO' %>
+
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">2) ¿Eres poco comunicativo?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_X2, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_X2, 'NO' %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">3) ¿Te atreves a expresar tus sentimientos?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_X3, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_X3, 'NO' %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">4) ¿Exiges derechos?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_X4, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_X4, 'NO' %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">5) ¿Eres asertivo? </label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_X5, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_X5, 'NO' %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">6) ¿Tienes relaciones interpersonales muy
+              limitadas? </label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_X6, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_X6, 'NO' %>
+
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-10 control-label" for="usuario">7) Te sientes inseguro relacionándote con los
+              demás?</label>
+            <div class="col-md-4">
+              <%= f.label :SI %><%= f.radio_button :resp_X7, 'SI' %>
+              <%= f.label :NO %><%= f.radio_button :resp_X7, 'NO' %>
+            </div>
+          </div>
+          </br>
+          </br>
+          </br>
+           <div class="form-group">
+          <div class="col-sm-offset-5 col-md-5">
+          <%= f.submit "Guardar" ,class:"btn btn-primary"%>
+           <%= button_tag "Cancelar", type: :reset ,class:"btn btn-primary"%>
+           <%= link_to 'Volver', url_for(:back) ,class:"btn btn-primary"%>
+           
+          </div>
+        </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    </div>
+<% end %>
+
+</section>
+</section>

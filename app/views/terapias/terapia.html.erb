@@ -1,0 +1,25 @@
+<%= form_for :mostrar_terapia, :url=> { :controller => 'terapias',:action => :mostrar_terapia } do |f| %>
+    <table>
+
+
+      <tr> <%= f.text_field :cedula  ,class:"form-control",:readonly => true ,placeholder: @paciente.id,:value => @paciente.id %>
+        <th>Temperamento</th>
+        <th>|</th>
+        <th> Terapia </th>
+        <th>|</th>
+
+      </tr>
+
+      <%  @temperamento.each do |temperamento| %>
+          <tr>
+            <td><%=  @temperamento.paciente_id %> </td>
+            <th>|</th>
+            <td><center><%= demora.id %></center> </td>
+            <th>|</th>
+            <td><%= demora.created_at %>| </td>
+            <th>--></th>
+
+          </tr>
+          </table>
+      <% end %>
+<% end %>

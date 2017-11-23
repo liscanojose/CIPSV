@@ -1,0 +1,75 @@
+<%= render "partials/head_dashboard" %>
+
+<div style="margin-top:40px;"></div>
+<h1>Actualizando <%= @rol %></h1>
+ 
+<%= form_for :usuario, url: usuario_path(@usuario), method: :patch do |f| %>
+  <% if @usuario.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@usuario.errors.count, "error") %> prohibited
+      este usuario ha sido actualizado:</h2>
+    <ul>
+    <% @usuario.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <div class="form-group">
+  <label class="col-md-4 control-label" for="usuario">Nombre</label>  
+  <div class="col-md-5">
+ 
+   <%= f.text_field :nombre ,class:"form-control input-md", placeholder:"nombre" %> 
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="usuario">Apellido</label>  
+  <div class="col-md-5">
+   <%= f.text_field :apellido ,class:"form-control input-md", placeholder:"apellido" %> 
+    
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="usuario">Telefono</label>  
+  <div class="col-md-5">
+   <%= f.text_field :telefono ,class:"form-control input-md", placeholder:"telefono" %> 
+    
+  </div>
+</div>
+
+ 
+ 
+  <div class="form-group">
+  <label class="col-md-4 control-label" for="usuario">Correo</label> 
+  <div class="col-md-5">
+    <%= f.email_field :correo ,class:"form-control input-md", placeholder:"correo"%>
+  </div>
+  </div>
+
+  <div class="form-group">
+  <label class="col-md-4 control-label" for="usuario">Contraseña</label>  
+  <div class="col-md-5">
+  <%= f.password_field :password ,class:"form-control input-md", placeholder:"contraseña"%>
+    
+  </div>
+</div>
+ 
+  <p>
+    <div class="col-sm-offset-4 col-md-4">
+    <button id="registrar" name="registrar" class="btn btn-primary">Actualizar</button>
+    <%= link_to 'Volver', usuario_path(@usuario) ,id: "registrar", class:"btn btn-primary link-button"%>
+  </div>
+  </p>
+<% end %>
+
+
+
+
+
+
+
+
+<%= render "partials/bottom_dashboard" %>

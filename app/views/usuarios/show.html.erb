@@ -1,0 +1,31 @@
+<%= render "partials/head_dashboard" %>
+
+
+  <div class="col-lg-11">
+    <h1 class="page-header">
+      <%= @accionUsuario %> <small>Mostrar <%= @accionUsuario%></small>
+    </h1>
+  </div>
+
+  <div class="row  col-lg-10" style="text-align:right; margin-bottom:-20px;">
+    <%= link_to 'Volver', url_for(:back) ,class:"btn btn-primary"%>
+  </div>
+
+  <div class="row col-sm-offset-1 col-md-5 col-lg-12" style="text-align:center;">
+    <table class="show">
+      <tr class="table-title">
+        <td>Nombre</td>
+        <td>Apellido</td>
+        <td>Correo</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><%= @usuario.nombre %></td>
+        <td><%= @usuario.apellido %></td>
+        <td><%= @usuario.correo %></td>
+        <td><%= link_to 'Editar', edit_usuario_path(@usuario) %></td>
+      </tr>
+    </table>
+  </div>
+
+<%= render "partials/bottom_dashboard" %>

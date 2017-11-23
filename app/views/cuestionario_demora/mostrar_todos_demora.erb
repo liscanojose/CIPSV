@@ -1,0 +1,35 @@
+<body>
+      <!--sidebar start-->
+      <%= render "partials/menu_"+@rol2 %>
+      <!--sidebar end-->
+
+
+
+   <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+<table>
+  <tr>
+    <th>Cedula</th>
+    <th>|</th>
+    <th> Id Cuestionario </th>
+    <th>|</th>
+    <th>Fecha de creacion</th>
+    <th colspan="2"></th>
+
+  </tr>
+
+  <%  @cuestionario_demora.each do | cuestionario_demora| %>
+      <tr>
+        <td><%= cuestionario_demora.paciente_id %> </td>
+        <th>|</th>
+        <td><center><%= cuestionario_demora.id %></center> </td>
+        <th>|</th>
+        <td><%= cuestionario_demora.created_at %>| </td>
+        <th>--></th>
+        <td><%= link_to 'Evaluar', controller: "cuestionario_demora", action: "evaluacion", id: cuestionario_demora %></td>
+      </tr>
+  <% end %>
+</table>
+  </section>
+</section>

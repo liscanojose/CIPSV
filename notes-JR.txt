@@ -1,0 +1,48 @@
+Roles
+0     Presidente
+1     Coordinador general
+2     Psicologo
+3     Psiquiatra
+4     Colaborador
+5     Paciente
+
+
+
+esto es de los menus.... la etiqueta i es la que establece el icono respectivo, lo quito porque no tiene estilos y estorba.. agregar
+
+
+<li>
+    <i class="fa fa-fw fa-bar-chart-o"></i> <%= link_to 'Registar Psicologo', '/registrarPsicologo' %>
+</li>
+
+
+
+
+
+
+        <% if session[:usuario_rol] == "Presidente"%>
+          <%= render file: CIPSV::Application::PATH_HB.to_s+"menu_presidente.html.erb" %>
+            <% elsif session[:usuario_rol] == "Coordinador General" %>
+              <%= render file: CIPSV::Application::PATH_HB.to_s+"menu_coordinador.html.erb" %>
+                <% elsif session[:usuario_rol] == "Psicologo" %>
+                  <% elsif session[:usuario_rol] == "Psiquiatra" %>
+                    <% elsif session[:usuario_rol] == "Colaborador" %>
+        <%end%>
+
+
+
+
+                <%    case session[:usuario_rol]
+                when "Presidente"
+                  render file: CIPSV::Application::PATH_HB.to_s+"menu_presidente.html.erb"
+                when "Coordinador General"
+                  render file: CIPSV::Application::PATH_HB.to_s+"menu_coordinador.html.erb"
+                end
+                #when "Psicologo"
+                
+                #when "Psiquiatra"
+                  
+                #when "Colaborador"
+
+              
+        %>

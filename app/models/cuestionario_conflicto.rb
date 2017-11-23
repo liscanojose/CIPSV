@@ -1,0 +1,67 @@
+class CuestionarioConflicto < ActiveRecord::Base
+  belongs_to :paciente
+  validates :resp_Q1 ,  presence: true
+  validates :resp_Q2 ,  presence: true
+  validates :resp_Q3 ,  presence: true
+  validates :resp_Q4 ,  presence: true
+  validates :resp_Q5 ,  presence: true
+  validates :resp_Q6 ,  presence: true
+  validates :resp_Q7 ,  presence: true 
+  validates :resp_R1 ,  presence: true
+  validates :resp_R2 ,  presence: true
+  validates :resp_R3 ,  presence: true
+  validates :resp_R4 ,  presence: true
+  validates :resp_R5 ,  presence: true
+  validates :resp_R6 ,  presence: true
+  validates :resp_R7 ,  presence: true
+  validates :resp_R8 ,  presence: true
+  validates :resp_R9 ,  presence: true
+  validates :resp_R10 ,  presence: true 
+  validates :resp_S1 ,  presence: true
+  validates :resp_S2 ,  presence: true
+  validates :resp_S3 ,  presence: true
+  validates :resp_S4 ,  presence: true
+  validates :resp_S5 ,  presence: true
+  validates :resp_S6 ,  presence: true
+  validates :resp_S7 ,  presence: true
+  validates :resp_T1 ,  presence: true
+  validates :resp_T2 ,  presence: true
+  validates :resp_T3 ,  presence: true
+  validates :resp_T4 ,  presence: true
+  validates :resp_T5 ,  presence: true
+  validates :resp_T6 ,  presence: true 
+  validates :resp_U1 ,  presence: true
+  validates :resp_U2 ,  presence: true
+  validates :resp_U3 ,  presence: true
+  validates :resp_U4 ,  presence: true
+  validates :resp_U5 ,  presence: true
+  validates :resp_U6 ,  presence: true
+  validates :resp_U7 ,  presence: true
+  validates :resp_U8 ,  presence: true
+  validates :resp_U9 ,  presence: true
+  validates :resp_V1 ,  presence: true
+  validates :resp_V2 ,  presence: true
+  validates :resp_V3 ,  presence: true
+  validates :resp_V4 ,  presence: true
+  validates :resp_V5 ,  presence: true
+  validates :resp_V6 ,  presence: true
+  validates :resp_V7 ,  presence: true
+  validates :resp_V8 ,  presence: true
+  validates :resp_V9 ,  presence: true
+  validates :resp_V10 ,  presence: true 
+  validates :resp_W1 ,  presence: true
+  validates :resp_W2 ,  presence: true
+  validates :resp_W3 ,  presence: true
+  validates :resp_W4 ,  presence: true
+  validates :resp_W5 ,  presence: true   
+  validates :resp_W6 ,  presence: true
+  validates :resp_X1 ,  presence: true
+  validates :resp_X2 ,  presence: true
+  validates :resp_X3 ,  presence: true
+  validates :resp_X4 ,  presence: true
+  validates :resp_X5 ,  presence: true
+  validates :resp_X6 ,  presence: true
+  validates :resp_X7 ,  presence: true
+
+  
+end

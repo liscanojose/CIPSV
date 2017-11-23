@@ -1,0 +1,21 @@
+1**	Los ids de los	Roles a manejar en el proyecto seran los siguientes
+
+0     Presidente
+1     Coordinador general
+2     Psicologo
+3     Psiquiatra
+4     Colaborador
+
+2**	Los formularios de registro poseeran un campo oculto del formulario que mandaran el rol del usuario a registrar
+		al finalizar los testeos del proyecto este campo se ocultara (display : none)
+
+          <div class="form-group" style="display:none">
+            <label class="col-md-4 control-label" for="usuario">Rol</label>
+            <div class="col-md-5">
+             <%= f.text_field :rol,class:"form-control",:readonly => true ,placeholder: "psicologo",:value => "1"%>
+            </div>
+          </div>
+
+
+
+3** 	

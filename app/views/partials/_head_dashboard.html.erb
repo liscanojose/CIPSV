@@ -1,0 +1,61 @@
+
+
+  </head>
+  
+  <body>
+
+    <div id="wrapper">
+
+            <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/inicio">C.I.P.S.V.</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                 <li class="dropdown">
+                    <%= link_to 'Cerrar Sesion', '/logout'%>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+
+                    <a class="perfil-nav" href="/inicio">
+
+                            <p class="perfil"><%=session[:usuario_rol]%> </p>    
+                            <p class="perfil"><%= session[:usuario_nombre]%>    <%=session[:usuario_apellido]%> </p>
+
+                    </a>
+
+                    <li class="active">
+                        <%= link_to 'Inicio', '/dashboard' %> 
+                    <li>
+                            <!--    MENU     -->
+                            <%=render "partials/menu"%>
+
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+        <!--    FIN DEL MENU     -->
+
+        <div id="page-wrapper">
+
+        <div class="container col-lg-12">
+          <!--<div class="space"></div>-->
+            <!-- Mensaje -->
+                <div class="row mensaje">
+                    <% flash.each do |name, msg| -%>
+                          <%= content_tag :div, msg, class: name%>
+                    <% end -%>
+                </div>
+            <!-- Mensaje -->

@@ -1,0 +1,97 @@
+                
+                <% if session[:rol_menu]==0%>
+                <!-- Coordinador General -->
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#coordinadorG">
+                        <i class="fa fa-fw fa-arrows-v">
+                        </i> Coordinador General <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="coordinadorG" class="collapse">
+                            <li>
+                                <%= link_to 'Registar', '/registrarCoordinadorGeneral' %>
+                            </li>
+                            <li>
+                                <%= link_to 'Ver', '/mostrarCoordinadorGeneral' %>
+                            </li>
+
+
+                        </ul>
+                    </li>
+                <!-- Coordinador General -->
+                <%end%>
+
+                <% if session[:rol_menu]==0 or session[:rol_menu]==1 %>
+                <!-- Psicologos -->
+                     <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#psicologos">
+                        <i class="fa fa-fw fa-arrows-v">
+                        </i> Psicologo <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="psicologos" class="collapse">
+                            <li>
+                                <%= link_to 'Registar', '/registrarPsicologo'  %>
+                            </li>
+                            <li>
+                                <%= link_to 'Listado', '/mostrarPsicologos' %>
+                            </li>
+                        </ul>
+                    </li>
+                <!-- Psicologos -->
+
+                <!-- Psiquiatras -->
+
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#psiquiatras">
+                        <i class="fa fa-fw fa-arrows-v">
+                        </i> Psiquiatras <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="psiquiatras" class="collapse">
+                            <li>
+                                <%= link_to 'Registar', '/registrarPsiquiatra' %>
+                            </li>
+                            <li>
+                                <%= link_to 'Listado', '/mostrarPsiquiatras' %>
+                            </li>
+
+
+                        </ul>
+                    </li>
+
+                <!-- Psiquiatras -->
+
+                <!-- Colaboradores -->
+
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#colaboradores">
+                        <i class="fa fa-fw fa-arrows-v">
+                        </i> Colaboradores <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="colaboradores" class="collapse">
+                            <li>
+                                <%= link_to 'Registar', '/registrarColaborador' %>
+                            </li>
+                            <li>
+                                <%= link_to 'Listado', '/mostrarColaboradores' %>
+                            </li>
+
+
+                        </ul>
+                    </li>
+
+                <!-- Colaboradores -->
+                <%end%>
+
+                <!-- Pacientes -->
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#pacientes">
+                        <i class="fa fa-fw fa-arrows-v">
+                        </i> Pacientes <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="pacientes" class="collapse">
+                            <% if session[:rol_menu] !=4 %>
+                                <li>
+                                    <%= link_to 'Registar', '/registrarPaciente' %>
+                                </li>
+                            <% end %>
+                            <li>
+                                <%= link_to 'Listado', '/mostrarPacientes' %>
+                            </li>
+                        </ul>
+                    </li>
+                <!-- Pacientes -->
+

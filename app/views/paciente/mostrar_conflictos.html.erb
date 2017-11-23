@@ -1,0 +1,50 @@
+<%= render "partials/head_dashboard" %>
+
+
+  <div class="col-lg-11">
+    <h1 class="page-header">
+      <%= @accionUsuario %> <small>Mostrar <%= @accionUsuario%></small>
+    </h1>
+  </div>
+
+  <div class="row  col-lg-10" style="text-align:right;">
+    <%= link_to 'Volver', url_for(:back) ,class:"btn btn-primary"%>
+  </div>
+
+  <div class="row col-sm-offset-1 col-md-5 col-lg-12" style="text-align:center;">
+    <table class="show">
+      <tr class="table-title">
+    <th>Cedula</th>
+    <th></th>
+    <th> Id Cuestionario </th>
+    <th></th>
+    <th>Fecha de creacion</th>
+    <th></th>
+
+  </tr>
+
+  <%  @conflictos.each do |conflicto| %>
+      <tr>
+        <td><%=  conflicto.paciente_id %> </td>
+        <th></th>
+        <td><center><%= conflicto.id %></center> </td>
+        <th></th>
+        <td><%= conflicto.created_at %>| </td>
+        <th>--></th>
+
+
+
+        <td><%= link_to 'Evaluar', controller: "cuestionario_conflicto", action: "evaluacion", id: conflicto %></td>
+
+
+
+
+
+  </tr>
+<% end %>
+</table>
+  </div>
+
+
+
+<%= render "partials/bottom_dashboard" %>

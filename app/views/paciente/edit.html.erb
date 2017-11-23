@@ -1,0 +1,15 @@
+<body>
+<%= render "partials/head_dashboard" %>
+
+  <div class="row col-lg-12">
+  	<div class="space"></div>
+
+    <!-- Mensaje -->
+        <div class="row" style="margin-right: -40px;">
+          <% flash.each do |name, msg| -%>
+                <%= content_tag :div, msg, class: name%>
+          <% end -%>
+      </div>
+  	<!-- Mensaje -->
+
+  </div>

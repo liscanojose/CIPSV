@@ -1,0 +1,52 @@
+
+    </head>
+  
+    <body>
+        <!-- Mensaje -->
+            <div class="row">
+                <% flash.each do |name, msg| -%>
+                      <%= content_tag :div, msg, class: name%>
+                <% end -%>
+            </div>
+        <!-- Mensaje -->
+
+    <div class="container-alone">
+
+
+
+        <div class="row col-lg-12">
+            <div class="col-sm-offset-4 col-md-4 login loginmodal-container">
+                <div style="padding:0px; margin:0px; display:none">
+                    <% flash.each do |name, msg| -%>
+                        <%= content_tag :div, msg, class: name %>
+                    <% end -%>
+                </div>
+
+
+
+<% provide(:title, 'Reestablecer Contraseña') %>
+<h1>Cambiar Contraseña</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@usuario, url: password_reset_path(params[:id])) do |f| %>
+     
+
+      <%= hidden_field_tag :correo, @usuario.correo %>
+
+      <%= f.label :Contraseña %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.label :password_confirmation, "Confirmacion" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+      <%= f.submit "Cambiar Contraseña", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+
+            </div>
+        </div>
+
+    </div>

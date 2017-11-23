@@ -1,0 +1,48 @@
+<%= render "partials/head_dashboard" %>
+
+
+  <div class="col-lg-11">
+    <h1 class="page-header">
+      <%= @accionUsuario %> <small>Mostrar <%= @accionUsuario%></small>
+    </h1>
+  </div>
+
+  <div class="row  col-lg-10" style="text-align:right;">
+    <%= link_to 'Volver', url_for(:back) ,class:"btn btn-primary"%>
+  </div>
+
+  <div class="row col-sm-offset-1 col-md-5 col-lg-12" style="text-align:center;">
+    <table class="show">
+      <tr class="table-title">
+    <th>Cedula</th>
+    <th></th>
+   
+    <th></th>
+    
+  </tr>
+  <tr>
+	<td><%= @cuestionario_tipo_frustracion.cedula %></td>
+	 <td>|</td>
+
+  </tr>
+ </table>
+<div class="container">
+<h1> Resultados encotrados en el paciente de cedula: <%= @cuestionario_tipo_frustracion.cedula %> </h1>
+ 
+ <h2><center><%= @evaluacion1 %></center></h2>
+
+ <br>
+  <h2><center><%= @evaluacion2 %></center></h2>
+
+  <br>
+  <h2><center><%= @evaluacion3 %></center></h2>
+  </div>
+
+
+
+
+  </div>
+
+
+
+<%= render "partials/bottom_dashboard" %>

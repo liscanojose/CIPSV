@@ -1,0 +1,9 @@
+<h1>CIPSV App</h1>
+
+<p>Hola <%= @usuario.nombre %>,</p>
+
+<p>
+Bienvenido a CIPSV App! Has Click en el link de abajo para activar tu cuenta:
+</p>
+
+<%= link_to "Activar", edit_account_activation_url(@usuario.activation_token,correo: @usuario.correo) %>

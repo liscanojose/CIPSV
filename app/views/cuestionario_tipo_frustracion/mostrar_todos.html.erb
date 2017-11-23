@@ -1,0 +1,44 @@
+<body>
+      <!--sidebar start-->
+      <%= render "partials/menu_"+@rol2 %>
+      <!--sidebar end-->
+
+
+
+   <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+
+<table>
+  <tr>
+    <th>Cedula</th>
+    <th>|</th>
+  	<th> Id Cuestionario </th>
+  	<th>|</th>
+  	<th>Fecha de creacion</th>
+    <th colspan="2"></th>
+    
+  </tr>
+
+<%  @cuestionario_tipo_frustracions.each do | cuestionario_tipo_frustracion| %>
+  <tr>
+    <td><%= cuestionario_tipo_frustracion.paciente_id %> </td>
+    <th>|</th>
+    <td><%= cuestionario_tipo_frustracion.id %> </td>
+    <th>|</th>
+    <td><%= cuestionario_tipo_frustracion.created_at %>| </td>
+     <th>--></th>
+
+   
+   
+    <td><%= link_to 'Evaluar', controller: "cuestionario_tipo_frustracion", action: "evaluacion", id: cuestionario_tipo_frustracion %></td>
+    
+    
+    
+  
+
+  </tr>
+<% end %>
+</table>
+</section>
+</section>
